@@ -6,7 +6,8 @@ class Ship():
     def __init__(self, ai_settings, screen):
         self.screen = screen
         self.ai_settings = ai_settings
-        self.image = pygame.image.load('images/rocket1.png')
+        self.image = pygame.image.load('images/rocket.png')
+        # self.image = pygame.transform.scale(self.image, (202, 110))
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
