@@ -22,9 +22,9 @@ def check_events(ai_settings, screen, stats, sb, play_button, ship, aliens,
 
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
-    if event.key == pygame.K_l:
+    if event.key == pygame.K_RIGHT:
         ship.moving_right = True
-    elif event.key == pygame.K_h:
+    elif event.key == pygame.K_LEFT:
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_settings, screen, ship, bullets)
@@ -35,9 +35,9 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
 
 
 def check_keyup_events(event, ship):
-    if event.key == pygame.K_l:
+    if event.key == pygame.K_RIGHT:
         ship.moving_right = False
-    elif event.key == pygame.K_h:
+    elif event.key == pygame.K_LEFT:
         ship.moving_left = False
 
 
@@ -207,7 +207,6 @@ def check_game_paused():
 def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets,
                   play_button):
     screen.fill(ai_settings.bg_color)
-
     for bullet in bullets.sprites():
         bullet.draw_bullet()
 
