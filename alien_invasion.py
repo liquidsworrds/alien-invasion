@@ -11,6 +11,7 @@ from ship import Ship
 
 def run_game():
     pygame.init()
+    clock = pygame.time.Clock()
     ai_settings = Settings()
     screen = pygame.display.set_mode(
             (ai_settings.screen_width, ai_settings.screen_height))
@@ -28,6 +29,7 @@ def run_game():
 
     # Start the main loop for the game
     while True:
+        clock.tick(60)
         gf.check_events(ai_settings, screen, stats, sb, play_button, ship,
                         aliens, bullets)
 

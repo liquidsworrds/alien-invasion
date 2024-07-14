@@ -10,7 +10,7 @@ class Ship(Sprite):
         self.screen = screen
         self.ai_settings = ai_settings
         self.image = pygame.image.load('images/rocket.png')
-        # self.image = pygame.transform.scale(self.image, (202, 110))
+        # self.image = pygame.transform.scale(self.image, (50, 80))
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 

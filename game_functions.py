@@ -28,6 +28,8 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
         ship.moving_left = True
     elif event.key == pygame.K_SPACE:
         fire_bullet(ai_settings, screen, ship, bullets)
+    elif event.key == pygame.K_ESCAPE:
+        check_game_paused()
     elif event.key == pygame.K_q:
         sys.exit()
 
@@ -189,6 +191,17 @@ def check_high_score(stats, sb):
     if stats.score > stats.high_score:
         stats.high_score = stats.score
         sb.prep_high_score()
+
+
+def check_game_paused():
+    paused = True
+    while paused:
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    paused = False
+                elif event.key == pygame.K_q:
+                    sys.exit()
 
 
 def update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets,
